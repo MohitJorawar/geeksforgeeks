@@ -1,0 +1,362 @@
+:root{
+	--bg:#f0f2f3;
+	--card:#fff;
+	--accent:#2f8f47;
+	--muted:#6b6b6b;
+	--panel-shadow: rgba(0,0,0,0.08);
+	--green-light: #d6f3db;
+}
+
+*{box-sizing:border-box}
+body{
+	font-family: "Segoe UI", Roboto, Arial, sans-serif;
+	margin:0;
+	background: var(--bg);
+	color:#222;
+}
+
+/* Header layout matching screenshot */
+.site-header{
+	height:64px;
+	background:#fff;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	padding:0 28px; /* slightly wider padding */
+	gap:22px;
+	box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+/* left group: logo + search */
+.header-left{
+	display:flex;
+	align-items:center;
+	gap:14px;
+	flex:0 0 auto;
+}
+
+/* logo image sizing — use height so it doesn't crop */
+.logo{display:flex;align-items:center;justify-content:center;padding:8px 10px;overflow:visible}
+.logo-img{
+	/* larger logo to match request */
+	height:48px;
+	width:auto;
+	display:block;
+	object-fit:contain;
+}
+
+/* search box: wider, rounded, pale green border */
+.search-wrap{
+	display:flex;
+	align-items:center;
+	background:#fff;
+	border-radius:22px;
+	padding:8px 14px;
+	border:2px solid #d7efe0;
+	min-width:360px;
+	max-width:520px;
+	gap:10px;
+	box-shadow:none;
+}
+.search-icon{flex:0 0 auto;opacity:0.85}
+.search-input{
+	border:0;
+	outline:0;
+	font-size:15px;
+	padding:6px 6px;
+	background:transparent;
+	min-width:240px;
+}
+
+/* center nav - slightly smaller spacing and centered text */
+.top-nav{
+	display:flex;
+	align-items:center;
+	gap:28px;
+	flex:1 1 auto;
+	justify-content:center;
+}
+.top-nav .nav-item{ display:flex; align-items:center; }
+.top-nav .nav-btn, .top-nav .nav-item > .nav-btn, .top-nav .nav-item > .nav-item {
+	background:transparent;
+	border:0;
+	padding:8px 6px;
+	font-size:15px;
+	color:#111;
+	cursor:pointer;
+	display:inline-flex;
+	align-items:center;
+	gap:6px;
+}
+
+/* right side icons: slightly larger circles, light background like screenshot */
+.header-right{
+	display:flex;
+	align-items:center;
+	gap:12px;
+	flex:0 0 auto;
+}
+.icon-btn{
+	width:40px;
+	height:40px;
+	border-radius:50%;
+	border:0;
+	background:#fbfbfb;
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	cursor:pointer;
+	color:#333;
+	font-weight:600;
+	box-shadow:0 1px 0 rgba(0,0,0,0.04);
+}
+.icon-btn:hover{background:#fff}
+
+.icon-btn.notif{position:relative}
+/* small red notification dot */
+.red-dot{
+	position:absolute;
+	right:8px;
+	top:8px;
+	width:8px;height:8px;border-radius:50%;
+	background:#ff3b30;
+	box-shadow:0 0 0 2px #fff;
+}
+
+/* avatar slightly larger */
+.avatar{width:40px;height:40px;border-radius:50%;background:#efefef;display:flex;align-items:center;justify-content:center;font-weight:700;color:#333}
+
+.page{
+	max-width:1180px;
+	margin:28px auto;
+	display:flex;
+	gap:28px;
+	padding:0 12px;
+}
+
+/* left column */
+.order-area{
+	flex:1.2;
+}
+
+.order-area h2{
+	margin:0 0 18px 6px;
+	font-size:20px;
+}
+
+/* cards */
+.card{
+	background:var(--card);
+	border-radius:6px;
+	display:flex;
+	align-items:center;
+	padding:14px;
+	box-shadow: 0 2px 6px var(--panel-shadow);
+	margin-bottom:14px;
+}
+
+.thumb{
+	width:160px;
+	height:74px;
+	border-radius:6px;
+	background:linear-gradient(90deg,#b08b2b,#dbb84a);
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	color:#fff;
+	font-weight:700;
+	margin-right:14px;
+}
+
+.thumb.small{
+	/* match main thumb size (same width/height as .thumb) */
+	width:160px;
+	height:74px;
+	padding:8px; /* small inner padding */
+	background: linear-gradient(90deg, #ff4b4b 0%, #b30000 50%, #000000 100%); /* red -> black L→R */
+	color:#fff;
+	border-radius:6px; /* same corner radius as .thumb */
+	overflow:hidden;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+}
+.thumb.small .thumb-art{
+	color:#fff;
+	font-weight:700;
+	font-size:14px; /* slightly smaller to fit the flattened height */
+	text-align:center;
+	line-height:1.05;
+}
+
+/* ensure any support image stays centered within the new size */
+.support-img{
+	max-width:78%;
+	max-height:78%;
+	width:auto;
+	height:auto;
+	display:block;
+	object-fit:contain;
+}
+
+.thumb-art{font-size:15px;text-align:center}
+
+.card-body{flex:1}
+.card-body h3{margin:0 0 6px;font-size:18px}
+.muted{color:var(--muted);font-size:14px;margin:0}
+.desc{margin-top:8px;color:#444;font-size:14px}
+
+/* price */
+.price-block{width:110px;text-align:right}
+.price-block .old{text-decoration:line-through;color:#9a9a9a;display:block}
+.price-block .new{font-weight:700; font-size:18px}
+
+/* FREE badge */
+.price-free{
+	background:#1fb463;color:#fff;padding:6px 12px;border-radius:20px;font-weight:700;
+}
+
+/* right column - payment card */
+.payment-area{flex:0 0 360px}
+
+.payment-card{
+	background:var(--card);
+	border-radius:8px;
+	padding:18px;
+	box-shadow: 0 4px 12px var(--panel-shadow);
+	position:sticky;
+	top:26px;
+}
+
+.payment-card .line{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding:8px 0;
+}
+
+.value{font-weight:600}
+.discount{color:#189a4a}
+.coupon{color:#189a4a}
+
+hr{border:none;border-top:1px solid #e7e7e7;margin:10px 0}
+
+.total-amt{font-size:20px}
+
+.coupon-row{
+	display:flex;
+	gap:8px;
+	margin-top:8px;
+}
+.coupon-row input{
+	flex:1;
+	padding:8px 10px;
+	border-radius:4px;border:1px solid #ccc;
+}
+.coupon-row button{
+	padding:8px 12px;border-radius:4px;border:0;background:#bdbdbd;color:#fff;cursor:pointer;
+}
+.coupon-row button.active{background:var(--accent)}
+
+.coupon-status{color:green;margin-top:8px;font-weight:600}
+.savings{margin-top:12px}
+.save-pill{
+	background:var(--green-light);
+	padding:12px;border-radius:22px;text-align:center;color:#0a6b35;font-weight:700;
+}
+
+.pay-btn{
+	width:100%;
+	background:var(--accent);
+	color:#fff;padding:12px;border-radius:6px;border:0;font-size:16px;margin-top:12px;cursor:pointer;
+	box-shadow:0 2px 0 rgba(0,0,0,0.06);
+}
+
+.terms{margin-top:10px;color:#666;font-size:13px;text-align:center}
+
+/* dropdown styling */
+.top-nav .has-dropdown{ position:relative; display:inline-flex; align-items:flex-start; }
+
+/* dropdown panel */
+.top-nav .dropdown{
+	position:absolute;
+	top:calc(100% + 8px);
+	left:0;
+	min-width:220px;
+	background:#fff;
+	border-radius:6px;
+	box-shadow: 0 8px 20px rgba(21,21,21,0.12);
+	overflow:hidden;
+	border-top:4px solid var(--accent); /* green accent strip like screenshot */
+	z-index:60;
+	opacity:0;
+	transform:translateY(-6px);
+	pointer-events:none;
+	transition:opacity .15s ease,transform .15s ease;
+}
+
+/* visible state */
+.top-nav .dropdown.open,
+.top-nav .dropdown[aria-hidden="false"]{
+	opacity:1;
+	transform:translateY(0);
+	pointer-events	auto;
+}
+
+/* allow opening dropdown on hover (and keyboard focus) */
+.top-nav .has-dropdown:hover .dropdown,
+.top-nav .has-dropdown:focus-within .dropdown{
+	opacity:1;
+	transform:translateY(0);
+	pointer-events:auto;
+}
+
+/* top highlighted item */
+.top-nav .dropdown-top{
+	padding:12px 14px;
+	background:#f8f3e6; /* pale highlight */
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	gap:8px;
+	font-weight:600;
+	color:#6f5b1a;
+	border-bottom:1px solid #eee;
+}
+
+/* list */
+.top-nav .dropdown-list{
+	list-style:none;
+	margin:0;
+	padding:8px 0;
+}
+.top-nav .dropdown-list li{
+	padding:12px 14px;
+	white-space:nowrap;
+	cursor:pointer;
+	color:#111;
+	font-size:15px;
+}
+.top-nav .dropdown-list li:hover{
+	background:#f4f4f6;
+}
+
+/* small right chevron on top row */
+.chev-right{opacity:0.9;font-size:14px}
+
+/* keep nav positioning sane on small screens */
+@media (max-width:900px){
+	.page{flex-direction:column;padding:0 14px}
+	.payment-area{order:2;flex-basis:auto}
+	.order-area{order:1}
+	.search-wrap{min-width:160px; max-width:260px}
+	.top-nav{display:none}
+	.top-nav .dropdown{left:8px; right:8px; min-width:auto}
+}
+
+/* responsive: keep same look but reduce search width */
+@media (max-width:1000px){
+	.search-wrap{min-width:220px; max-width:320px}
+	.top-nav{display:none}
+}

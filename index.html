@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Payment Summary</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<!-- header -->
+	<header class="site-header">
+		<div class="header-left">
+			<a class="logo" href="#" aria-label="GFG Home">
+				<!-- use attached raster logo file (place the file logo.png next to main.html) -->
+				<img src="logo.png" alt="GFG logo" class="logo-img" />
+			</a>
+
+			<div class="search-wrap" role="search" aria-label="site search">
+				<svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4b4b4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+				</svg>
+				<input type="search" class="search-input" placeholder="Search..." />
+			</div>
+		</div>
+
+		<nav class="top-nav" role="navigation" aria-label="primary">
+			<div class="nav-item has-dropdown" id="coursesMenu">
+				<button class="nav-btn" aria-haspopup="true" aria-expanded="false">Courses <span class="chev">▾</span></button>
+
+				<div class="dropdown" role="menu" aria-hidden="true">
+					<div class="dropdown-top" role="presentation">
+						<span class="top-title">GfG Classroom Program</span>
+						<span class="chev-right">▸</span>
+					</div>
+					<ul class="dropdown-list" role="menu">
+						<li role="menuitem">DSA / Placements</li>
+						<li role="menuitem">GATE 2026 Prep</li>
+						<li role="menuitem">ML &amp; Data Science</li>
+						<li role="menuitem">Development</li>
+						<li role="menuitem">Cloud / DevOps</li>
+						<li role="menuitem">Programming Languages</li>
+						<li role="menuitem">All Courses</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Tutorials dropdown added -->
+			<div class="nav-item has-dropdown" id="tutorialsMenu">
+				<button class="nav-btn" aria-haspopup="true" aria-expanded="false">Tutorials <span class="chev">▾</span></button>
+				<div class="dropdown" role="menu" aria-hidden="true">
+					<div class="dropdown-top" role="presentation">
+						<span class="top-title">Popular Tutorials</span>
+						<span class="chev-right">▸</span>
+					</div>
+					<ul class="dropdown-list" role="menu">
+						<li role="menuitem">Python</li>
+						<li role="menuitem">Java</li>
+						<li role="menuitem">DSA</li>
+						<li role="menuitem">ML &amp; Data Science</li>
+						<li role="menuitem">Interview Corner</li>
+						<li role="menuitem">Programming Languages</li>
+						<li role="menuitem">Web Development</li>
+						<li role="menuitem">GATE</li>
+						<li role="menuitem">CS Subjects</li>
+						<li role="menuitem">DevOps</li>
+						<li role="menuitem">School Learning</li>
+						<li role="menuitem">Software and Tools</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Practice dropdown (added) -->
+			<div class="nav-item has-dropdown" id="practiceMenu">
+				<button class="nav-btn" aria-haspopup="true" aria-expanded="false">Practice <span class="chev">▾</span></button>
+				<div class="dropdown" role="menu" aria-hidden="true">
+					<div class="dropdown-top" role="presentation">
+						<span class="top-title">Practice Section</span>
+						<span class="chev-right">▸</span>
+					</div>
+					<ul class="dropdown-list" role="menu">
+						<li role="menuitem">Practice Coding Problems</li>
+						<li role="menuitem">Nation Skillup - Free Courses</li>
+						<li role="menuitem">Problem of the Day</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Jobs dropdown (added) -->
+			<div class="nav-item has-dropdown" id="jobsMenu">
+				<button class="nav-btn" aria-haspopup="true" aria-expanded="false">Jobs <span class="chev">▾</span></button>
+				<div class="dropdown" role="menu" aria-hidden="true">
+					<div class="dropdown-top" role="presentation">
+						<span class="top-title">Jobs</span>
+						<span class="chev-right">▸</span>
+					</div>
+					<ul class="dropdown-list" role="menu">
+						<li role="menuitem">Apply Now!</li>
+						<li role="menuitem">Post Jobs</li>
+						<li role="menuitem">Jobs Updates</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="header-right">
+			<button class="icon-btn" title="Language">A_a</button>
+			<button class="icon-btn" title="Dark mode">◐</button>
+			<button class="icon-btn notif" title="Notifications" aria-label="Notifications">
+				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+				</svg>
+				<span class="red-dot" aria-hidden="true"></span>
+			</button>
+
+			<div class="avatar" title="Account">M</div>
+		</div>
+	</header>
+
+	<main class="page">
+		<section class="order-area">
+			<h2>Order Summary</h2>
+
+			<!-- Course Card -->
+			<div class="card course-card">
+				<div class="thumb">
+					<!-- placeholder image block -->
+					<div class="thumb-art">Mission<br>NIMCET</div>
+				</div>
+				<div class="card-body">
+					<h3>NIMCET 2026 Preparation - Live</h3>
+					<p class="muted">Course Duration: 52 Weeks</p>
+				</div>
+				<div class="price-block">
+					<span class="old">₹19999</span>
+					<span class="new">₹12999</span>
+				</div>
+			</div>
+
+			<!-- Support Card -->
+			<div class="card support-card">
+				<div class="thumb small">
+					<!-- textual badge similar to Mission / NIMCET -->
+					<div class="thumb-art">
+						Doubt<br/>Support
+					</div>
+				</div>
+				<div class="card-body">
+					<h3>Doubt Support &amp; Assistance</h3>
+					<p class="muted">Service Valid Upto : <strong>12 Months</strong></p>
+					<p class="desc">Get All Your Essential Technical Queries Resolved in an Instant with GFG's Top Experts Available 24x7 !</p>
+				</div>
+				<div class="price-free">FREE</div>
+			</div>
+		</section>
+
+		<aside class="payment-area">
+			<div class="payment-card" id="paymentCard">
+				<div class="line">
+					<div>Course Price</div>
+					<div class="value">₹ <span id="coursePrice">19999</span></div>
+				</div>
+
+				<div class="line">
+					<div>Discount</div>
+					<div class="value discount">- ₹ <span id="discount">5000</span></div>
+				</div>
+
+				<div class="line">
+					<div>Premium Discount</div>
+					<div class="value">₹ <span id="premiumDiscount">0</span></div>
+				</div>
+
+				<div class="line">
+					<div>Coupon Discount</div>
+					<div class="value coupon">- ₹ <span id="couponDiscount">0</span></div>
+				</div>
+
+				<hr/>
+
+				<div class="line total">
+					<div><strong>You Pay :</strong></div>
+					<div class="value total-amt">₹ <span id="youPay">14999</span></div>
+				</div>
+
+				<div class="coupon-row">
+					<input type="text" id="couponInput" placeholder="ACEGATE35" />
+					<button id="applyBtn">Apply</button>
+				</div>
+
+				<div id="couponStatus" class="coupon-status"></div>
+
+				<div class="savings">
+					<div class="save-pill">
+						<span>💸 You Save :- ₹ <span id="youSave">0</span></span>
+					</div>
+				</div>
+
+				<button class="pay-btn" id="payNow">Pay Now</button>
+
+				<div class="terms">
+					<a href="https://www.geeksforgeeks.org/terms-of-service?_gl=1*m80b1j*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjwsPzHBhDCARIsALlWNG3xZYnaSWL1zBoDIevP0jiomLTIrgw2Rch3XK-ZBwL3hLbpr18boWYaArGzEALw_wcB&gbraid=0AAAAAC9yBkAfJ0FUbcd0Av-TBJpmdlbcn" target="_blank" rel="noopener noreferrer">
+						⚪ Terms &amp; Conditions
+					</a>
+				</div>
+			</div>
+		</aside>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
