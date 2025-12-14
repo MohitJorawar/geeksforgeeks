@@ -1,2 +1,2 @@
 # geeksforgeeks
-payment gateway clone
+This is a clone payment gateway of geeksforgeeks
